@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Youtube Transcript Summariser</title>
+    <style>
+        body {
+            width: max-content;
+            max-width: 700px; 
+            background-color: black;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-right: 40px;
+            /* margin-top: 80px; */
+            font-size: 5vh;
+            text-align: center;
+            color: violet;
+        }
+        #summarize{
+            margin-top: 40px;
+            background-color: aquamarine;
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            font-size: 5vh;
+            font-weight: bold;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            
+        }
+        #summarize:hover{
+            transition: 3ms;
+            box-shadow: rgb(248, 246, 246) 0px 3px 8px;
+        }
+    
+        /* button {
+            background-color: red;
+            color: white;
+            border-radius: 8px;
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            font-size: large;
+            margin: auto;
+            display: block;
+            border-color: coral;
+            margin-bottom: 10px; 
+        }
+        button[disabled] {
+            background-color: red;
+            color: white;
+            border-radius: 8px;
+            width: max-content;
+            height: max-content;
+            padding: 10px;
+            font-size: large;
+            margin: auto;
+            display: block;
+            border-color: lightpink; 
+        } */
+        p {
+            font-size: 3vh;
+            color: white;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            
+            
+        }
+        #output3 {
+            font-size: 4vh;
+            color: rgb(5, 254, 254);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+
+        }
+        
+        #output4 {
+            font-size: 4vh;
+            color: rgb(5, 254, 254);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+
+        }
+        #output5 {
+            font-size: 3vh;
+            color: rgb(0, 241, 249);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+
+        }
+
+        h3{
+            /* display: none; */
+            font-size: 25px;
+            font-family: 'Times New Roman', Times, serif;
+            left: top;
+            top: left;
+        }
+        .text-to-speech {
+            display: none;
+        }
+        
+        .search-More-Btn {
+            display: none;
+        }
+        .download-Btn {
+            display: block;
+        }
+        .Save-Btn{
+            display: none;
+        }
+        .Note-Btn{
+            display: none;
+        }
+        .Translate-Btn{
+            display: none;
+        }
+        .download-Btn{
+            display: none;
+        }
+        .allbtns{
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .allbtns button{
+            background-color: aquamarine;
+            height: 80px;
+            width: 220px;
+            border-radius: 5px;
+            font-size: 3vh;
+            font-weight: bold;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            
+        }
+        #downloadProgress{
+            height: 30px;
+            width: 350px;
+        }
+        span{
+            color: blue;
+            font-size: 5vh;
+            font-weight: 900;
+        }
+        @media only screen and (max-width: 800px) {
+            
+            h1{
+                color: red;
+            }
+            #summarize{
+               width: 200px; 
+               background-color: plum;
+            }
+            .allbtns button{
+                width: 200px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Youtube Transcript summarizer</h1>
+        <button id="summarize" type="button">Summarize</button>
+        <br/>
+        <h3 id ="words_count"> </h3>
+        <p id="output"></p>
+        <p id="output2"></p>
+        <p id="output3"></p>
+        <p id="output4"></p>
+        <p id="output5"></p>
+        
+        <!-- Add a progress bar element in your HTML -->
+        <progress id="downloadProgress" value="0" max="100"></progress>
+        <span id="progressPercentage">0%</span>
+        <div class="allbtns">
+            <button id="textToSpeechBtn" class="text-to-speech" type="button">Listen</button>
+            <button id="searchMoreBtn" class="search-More-Btn" type="button">Search More</button> 
+            <button id="downloadBtn" class="download-Btn" type="button">Download</button> 
+            <button id="Translate" class="Translate-Btn" type="button">Translate</button>
+            <button id="Save"  class="Save-Btn" type="button">Save</button>
+            <button id="Notes"  class="Note-Btn" type="button">Notes</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script 
+</body>
+</html>
